@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.example</groupId>
+  <artifactId>test-automation</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Test Automation</name>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- General Custom Dependencies for Test Automation -->
+      <dependency>
+        <artifactId>test-automation-object-mapper</artifactId>
+        <groupId>org.example</groupId>
+        <version>${project.version}</version>
+        <!-- Object mapping utility for test automation -->
+      </dependency>
+      <dependency>
+        <artifactId>test-automation-config</artifactId>
+        <groupId>org.example</groupId>
+        <version>${project.version}</version>
+        <!-- Configuration management for test automation -->
+      </dependency>
+      <dependency>
+        <artifactId>test-automation-assertions</artifactId>
+        <groupId>org.example</groupId>
+        <version>${project.version}</version>
+        <!-- Custom assertions for validation in tests -->
+      </dependency>
+      <dependency>
+        <artifactId>test-automation-utils</artifactId>
+        <groupId>org.example</groupId>
+        <version>${project.version}</version>
+        <!-- General utility functions for test automation -->
+      </dependency>
+      <dependency>
+        <artifactId>test-automation-general-microservice</artifactId>
+        <groupId>org.example</groupId>
+        <version>${project.version}</version>
+        <!-- Utilities specific to microservice testing -->
+      </dependency>
+      <dependency>
+        <artifactId>test-automation-placeholder-microservice</artifactId>
+        <groupId>org.example</groupId>
+        <version>${project.version}</version>
+        <!-- Placeholder for future microservice-specific testing modules -->
+      </dependency>
+
+      <!-- AspectJ Dependencies for Aspect-Oriented Programming -->
+      <dependency>
+        <artifactId>aspectjweaver</artifactId>
+        <groupId>org.aspectj</groupId>
+        <version>${org.aspectj.version}</version>
+        <!-- Provides support for aspect-oriented programming, such as interceptors -->
+      </dependency>
+      <dependency>
+        <artifactId>aspectjrt</artifactId>
+        <groupId>org.aspectj</groupId>
+        <version>${org.aspectj.version}</version>
+        <!-- AspectJ runtime, required for executing aspect-oriented features -->
+      </dependency>
+
+      <!-- Allure Framework for Test Reporting -->
+      <dependency>
+        <artifactId>allure-bom</artifactId>
+        <groupId>io.qameta.allure</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${allure.version}</version>
+        <!-- Bill of materials for Allure, manages versions of Allure dependencies -->
+      </dependency>
+      <dependency>
+        <artifactId>allure-testng</artifactId>
+        <groupId>io.qameta.allure</groupId>
+        <version>${allure.version}</version>
+        <!-- Allure integration with TestNG for generating test reports -->
+      </dependency>
+      <dependency>
+        <artifactId>allure-rest-assured</artifactId>
+        <groupId>io.qameta.allure</groupId>
+        <version>${allure.version}</version>
+        <!-- Allure integration with REST Assured for API testing reports -->
+      </dependency>
+
+      <!-- Google Guava Library -->
+      <dependency>
+        <artifactId>guava</artifactId>
+        <groupId>com.google.guava</groupId>
+        <version>${guava.version}</version>
+        <!-- Google Guava library, provides collection types, utilities, and more -->
+      </dependency>
+
+      <!-- Selenide for Web Testing -->
+      <dependency>
+        <artifactId>selenide</artifactId>
+        <groupId>com.codeborne</groupId>
+        <version>${selenide.version}</version>
+        <!-- Selenide simplifies Selenium-based web UI testing -->
+      </dependency>
+      <dependency>
+        <artifactId>allure-selenide</artifactId>
+        <groupId>io.qameta.allure</groupId>
+        <version>${allure.version}</version>
+        <!-- Integration of Allure with Selenide for enhanced testing reports -->
+      </dependency>
+
+      <!-- Jackson for JSON Processing -->
+      <dependency>
+        <artifactId>jackson-core</artifactId>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <version>${com.fasterxml.jackson.core.version}</version>
+        <!-- Core part of Jackson that provides the key JSON processing features -->
+      </dependency>
+      <dependency>
+        <artifactId>jackson-annotations</artifactId>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <version>${com.fasterxml.jackson.core.version}</version>
+        <!-- Provides JSON annotations used with Jackson -->
+      </dependency>
+      <dependency>
+        <artifactId>jackson-databind</artifactId>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <version>${com.fasterxml.jackson.core.version}</version>
+        <!-- Jackson's Data-binding functionality for JSON (un)marshalling -->
+      </dependency>
+
+      <!-- Log4j for Logging -->
+      <dependency>
+        <artifactId>log4j-api</artifactId>
+        <groupId>org.apache.logging.log4j</groupId>
+        <version>${org.apache.logging.log4j.version}</version>
+        <!-- API module of Log4j for logging purposes -->
+      </dependency>
+      <dependency>
+        <artifactId>log4j-core</artifactId>
+        <groupId>org.apache.logging.log4j</groupId>
+        <version>${org.apache.logging.log4j.version}</version>
+        <!-- Core implementation of Log4j; provides the actual logging functionality -->
+      </dependency>
+
+      <!-- REST Assured for API Testing -->
+      <dependency>
+        <artifactId>rest-assured</artifactId>
+        <groupId>io.rest-assured</groupId>
+        <version>${io.rest-assured.version}</version>
+        <!-- Simplifies testing of RESTful APIs -->
+      </dependency>
+
+      <!-- Apache Commons Libraries -->
+      <dependency>
+        <artifactId>commons-lang3</artifactId>
+        <groupId>org.apache.commons</groupId>
+        <version>${commons-lang3.version}</version>
+        <!-- Provides extra functionality for Java's lang API such as StringUtils -->
+      </dependency>
+      <dependency>
+        <artifactId>commons-io</artifactId>
+        <groupId>commons-io</groupId>
+        <version>${commons-io.version}</version>
+        <!-- Library of utility methods for IO functionalities -->
+      </dependency>
+
+      <!-- AssertJ for Fluent Assertions in Tests -->
+      <dependency>
+        <artifactId>assertj-core</artifactId>
+        <groupId>org.assertj</groupId>
+        <version>${assertj-core.version}</version>
+        <!-- Provides fluent interface for writing assertions in tests -->
+      </dependency>
+
+      <!-- TestNG for Test Framework -->
+      <dependency>
+        <artifactId>testng</artifactId>
+        <groupId>org.testng</groupId>
+        <version>${org.testng.version}</version>
+        <!-- TestNG is used as the testing framework, providing annotations and running capabilities -->
+      </dependency>
+
+      <!-- JavaFaker for Generating Fake Test Data -->
+      <dependency>
+        <artifactId>javafaker</artifactId>
+        <groupId>com.github.javafaker</groupId>
+        <version>${com.github.javafaker.version}</version>
+        <!-- JavaFaker is used to generate fake data for tests -->
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <!-- Sub-modules of the project -->
+  <modules>
+    <module>modules/general/config</module>
+    <module>modules/general/object-mapper</module>
+    <module>modules/general/utils</module>
+    <module>modules/microservices/general</module>
+    <module>modules/microservices/placeholder</module>
+    <module>webapi-testng</module>
+    <module>webui-testng</module>
+  </modules>
+
+  <!-- Global properties used across the project -->
+  <properties>
+    <projectmodule.base.dir>${basedir}</projectmodule.base.dir>
+    <project.core.version>1.0.0</project.core.version>
+    <allure.maven.version>2.12.0</allure.maven.version>
+    <allure.version>2.24.0</allure.version>
+    <assertj-core.version>3.24.2</assertj-core.version>
+    <com.fasterxml.jackson.core.version>2.15.2</com.fasterxml.jackson.core.version>
+    <com.github.javafaker.version>1.0.2</com.github.javafaker.version>
+    <commons-io.version>2.13.0</commons-io.version>
+    <commons-lang3.version>3.12.0</commons-lang3.version>
+    <guava.version>32.1.3-jre</guava.version>
+    <io.rest-assured.version>5.3.2</io.rest-assured.version>
+    <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
+    <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
+    <org.apache.logging.log4j.version>2.20.0</org.apache.logging.log4j.version>
+    <org.aspectj.version>1.9.21</org.aspectj.version>
+    <org.testng.version>7.8.0</org.testng.version>
+    <selenide.version>7.1.0</selenide.version>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+</project>

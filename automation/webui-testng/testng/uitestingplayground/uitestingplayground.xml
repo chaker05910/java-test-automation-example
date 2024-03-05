@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite allow-return-values="true" name="Placeholder Suite" parallel="methods" thread-count="5">
+    <test name="Service">
+        <packages>
+            <package name="uitestingplayground.*"/>
+        </packages>
+    </test>
+    <!-- Add more <test> tags for different groups of test classes -->
+</suite>

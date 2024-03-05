@@ -25,12 +25,6 @@
         <!-- Configuration management for test automation -->
       </dependency>
       <dependency>
-        <artifactId>test-automation-assertions</artifactId>
-        <groupId>org.example</groupId>
-        <version>${project.version}</version>
-        <!-- Custom assertions for validation in tests -->
-      </dependency>
-      <dependency>
         <artifactId>test-automation-utils</artifactId>
         <groupId>org.example</groupId>
         <version>${project.version}</version>

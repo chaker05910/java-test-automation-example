@@ -1,10 +1,10 @@
-package org.example.verifications.placeholder;
+package org.dmukhin.webapi.testng.verifications.placeholder;
 
 import io.qameta.allure.Step;
 import java.util.Arrays;
 import java.util.List;
+import org.dmukhin.webapi.testng.verifications.BaseAsserts;
 import org.example.service.placeholder.models.comment.CommentDto;
-import org.example.verifications.BaseAsserts;
 
 /**
  * Contains assertion methods for verifying properties of lists of CommentDto objects.

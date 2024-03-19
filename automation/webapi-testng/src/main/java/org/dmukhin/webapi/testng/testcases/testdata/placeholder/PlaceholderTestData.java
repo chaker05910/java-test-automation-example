@@ -1,4 +1,4 @@
-package org.example.testcases.testdata.placeholder;
+package org.dmukhin.webapi.testng.testcases.testdata.placeholder;
 
 /**
  * Utility class for accessing various test data generators.

@@ -1,4 +1,4 @@
-package org.example.testcases.general;
+package org.dmukhin.webapi.testng.testcases.general;
 
 import com.github.javafaker.Faker;
 

@@ -3,7 +3,7 @@
 <suite allow-return-values="true" name="Placeholder Suite" parallel="methods" thread-count="5">
     <test name="Service">
         <packages>
-            <package name="placeholder.service.*"/>
+            <package name="org.dmukhin.webapi.testng.placeholder.*"/>
         </packages>
     </test>
     <!-- Add more <test> tags for different groups of test classes -->

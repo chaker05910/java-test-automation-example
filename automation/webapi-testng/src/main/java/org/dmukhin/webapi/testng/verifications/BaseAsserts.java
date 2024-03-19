@@ -1,4 +1,4 @@
-package org.example.verifications;
+package org.dmukhin.webapi.testng.verifications;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import io.qameta.allure.Step;

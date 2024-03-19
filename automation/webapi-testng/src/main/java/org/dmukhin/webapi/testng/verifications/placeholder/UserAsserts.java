@@ -1,8 +1,8 @@
-package org.example.verifications.placeholder;
+package org.dmukhin.webapi.testng.verifications.placeholder;
 
 import io.qameta.allure.Step;
+import org.dmukhin.webapi.testng.verifications.BaseAsserts;
 import org.example.service.placeholder.models.user.UserDto;
-import org.example.verifications.BaseAsserts;
 
 /**
  * Contains assertion methods for verifying properties of UserDto objects.

@@ -1,18 +1,16 @@
-package placeholder.service;
+package org.dmukhin.webapi.testng.placeholder;
 
+import static org.dmukhin.webapi.testng.verifications.placeholder.PlaceholderAsserts.placeholderAsserts;
 import static org.example.service.placeholder.PlaceholderApi.placeholderApi;
-import static org.example.verifications.placeholder.PlaceholderAsserts.placeholderAsserts;
-
-import java.util.Arrays;
-import java.util.List;
-
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.TmsLink;
+import java.util.Arrays;
+import java.util.List;
+import org.dmukhin.webapi.testng.testcases.general.placeholder.BasePlaceholderTest;
+import org.dmukhin.webapi.testng.testcases.groups.TestGroups;
 import org.example.service.placeholder.models.comment.CommentDto;
-import org.example.testcases.general.placeholder.BasePlaceholderTest;
-import org.example.testcases.groups.TestGroups;
 import org.testng.annotations.Test;
 
 /**

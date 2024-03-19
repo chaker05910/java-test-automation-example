@@ -1,4 +1,4 @@
-package org.example.testcases.testdata.placeholder;
+package org.dmukhin.webapi.testng.testcases.testdata.placeholder;
 
 import com.github.javafaker.Faker;
 import org.example.service.placeholder.models.user.AddressDto;

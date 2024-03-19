@@ -1,4 +1,4 @@
-package org.example.testcases.groups;
+package org.dmukhin.webapi.testng.testcases.groups;
 
 /**
  * Defines constants for various test groups. This class provides a centralized location for

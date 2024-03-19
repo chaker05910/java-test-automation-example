@@ -1,4 +1,4 @@
-package org.example.verifications.placeholder;
+package org.dmukhin.webapi.testng.verifications.placeholder;
 
 import java.util.List;
 import org.example.service.placeholder.models.comment.CommentDto;

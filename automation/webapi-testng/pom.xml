@@ -10,76 +10,24 @@
   <name>webapi-testng-automation-runner</name>
 
   <!-- Inherit configurations from the Parent POM -->
-  <parent>
-    <artifactId>test-automation</artifactId>
-    <groupId>org.example</groupId>
-    <version>1.0-SNAPSHOT</version>
-    <relativePath>../pom.xml</relativePath>
-  </parent>
-
-  <!-- Properties specific to this module -->
-  <properties>
-    <projectmodule.base.dir>${basedir}/../..</projectmodule.base.dir>
-  </properties>
-
-  <!-- Build configurations including plugins -->
-  <build>
-    <plugins>
-      <!-- Maven Surefire Plugin for test execution -->
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <groupId>org.apache.maven.plugins</groupId>
-        <version>${maven.surefire.plugin.version}</version>
-        <configuration>
-          <!-- Configuration for file encoding and AspectJ Java agent -->
-          <argLine>
-            -Dfile.encoding=${project.build.sourceEncoding}
-            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${org.aspectj.version}/aspectjweaver-${org.aspectj.version}.jar"
-          </argLine>
-        </configuration>
-        <dependencies>
-          <!-- AspectJ Weaver dependency for AOP features -->
-          <dependency>
-            <artifactId>aspectjweaver</artifactId>
-            <groupId>org.aspectj</groupId>
-            <version>${org.aspectj.version}</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-
-      <!-- Allure Maven Plugin for test report generation -->
-      <plugin>
-        <artifactId>allure-maven</artifactId>
-        <groupId>io.qameta.allure</groupId>
-        <version>${allure.maven.version}</version>
-        <configuration>
-          <!-- Allure report version and results directory configuration -->
-          <reportVersion>${allure.version}</reportVersion>
-          <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-  <!-- Dependencies used in this module -->
   <dependencies>
     <!-- Custom Configuration Dependency -->
     <dependency>
-      <groupId>org.example</groupId>
+      <groupId>org.dmukhin</groupId>
       <artifactId>test-automation-config</artifactId>
       <!-- Version is managed by the parent POM -->
     </dependency>
 
     <!-- Utility library -->
     <dependency>
-      <groupId>org.example</groupId>
+      <groupId>org.dmukhin</groupId>
       <artifactId>test-automation-utils</artifactId>
       <!-- Version is managed by the parent POM -->
     </dependency>
 
     <!-- Placeholder Microservice library -->
     <dependency>
-      <groupId>org.example</groupId>
+      <groupId>org.dmukhin</groupId>
       <artifactId>test-automation-placeholder-microservice</artifactId>
       <!-- Version is managed by the parent POM -->
     </dependency>
@@ -154,4 +102,56 @@
       <artifactId>javafaker</artifactId>
       <!-- Version is managed by the parent POM -->
     </dependency>
-  </dependencies></project>
+  </dependencies>
+
+  <!-- Properties specific to this module -->
+  <properties>
+    <projectmodule.base.dir>${basedir}/../..</projectmodule.base.dir>
+  </properties>
+
+  <!-- Build configurations including plugins -->
+  <build>
+    <plugins>
+      <!-- Maven Surefire Plugin for test execution -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven.surefire.plugin.version}</version>
+        <configuration>
+          <!-- Configuration for file encoding and AspectJ Java agent -->
+          <argLine>
+            -Dfile.encoding=${project.build.sourceEncoding}
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${org.aspectj.version}/aspectjweaver-${org.aspectj.version}.jar"
+          </argLine>
+        </configuration>
+        <dependencies>
+          <!-- AspectJ Weaver dependency for AOP features -->
+          <dependency>
+            <artifactId>aspectjweaver</artifactId>
+            <groupId>org.aspectj</groupId>
+            <version>${org.aspectj.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+      <!-- Allure Maven Plugin for test report generation -->
+      <plugin>
+        <artifactId>allure-maven</artifactId>
+        <groupId>io.qameta.allure</groupId>
+        <version>${allure.maven.version}</version>
+        <configuration>
+          <!-- Allure report version and results directory configuration -->
+          <reportVersion>${allure.version}</reportVersion>
+          <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- Dependencies used in this module -->
+  <parent>
+    <artifactId>test-automation</artifactId>
+    <groupId>org.dmukhin</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent></project>

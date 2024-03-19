@@ -71,7 +71,7 @@
     <!-- Custom Configuration Dependency -->
     <dependency>
       <artifactId>test-automation-config</artifactId>
-      <groupId>org.example</groupId>
+      <groupId>org.dmukhin</groupId>
       <!-- Version is managed by the parent POM -->
     </dependency>
 
@@ -127,7 +127,7 @@
   <!-- Build plugins configuration -->
   <parent>
     <artifactId>test-automation</artifactId>
-    <groupId>org.example</groupId>
+    <groupId>org.dmukhin</groupId>
     <relativePath>../pom.xml</relativePath>
     <version>1.0-SNAPSHOT</version>
   </parent>

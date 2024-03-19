@@ -5,12 +5,37 @@
                              http://maven.apache.org/maven-v4_0_0.xsd">
 
   <!-- Parent POM Configuration -->
-  <parent>
-    <groupId>org.example</groupId>
-    <artifactId>test-automation</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <relativePath>../../../pom.xml</relativePath> <!-- Relative path to the parent POM -->
-  </parent>
+  <dependencies>
+    <!-- Log4j API Dependency -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+    </dependency>
+
+    <!-- Custom Utility Dependency -->
+    <dependency>
+      <groupId>org.dmukhin</groupId>
+      <artifactId>test-automation-utils</artifactId>
+    </dependency>
+
+    <!-- Allure Java Commons Dependency for Reporting -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-java-commons</artifactId>
+    </dependency>
+
+    <!-- Custom Object Mapper Dependency -->
+    <dependency>
+      <groupId>org.dmukhin</groupId>
+      <artifactId>test-automation-object-mapper</artifactId>
+    </dependency>
+
+    <!-- Apache Commons Lang Dependency -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+  </dependencies>
 
   <!-- Project Basic Information -->
   <modelVersion>4.0.0</modelVersion> <!-- Maven model version -->
@@ -24,35 +49,10 @@
   </properties>
 
   <!-- Module Dependencies -->
-  <dependencies>
-    <!-- Log4j API Dependency -->
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-    </dependency>
-
-    <!-- Custom Utility Dependency -->
-    <dependency>
-      <groupId>org.example</groupId>
-      <artifactId>test-automation-utils</artifactId>
-    </dependency>
-
-    <!-- Allure Java Commons Dependency for Reporting -->
-    <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-java-commons</artifactId>
-    </dependency>
-
-    <!-- Custom Object Mapper Dependency -->
-    <dependency>
-      <groupId>org.example</groupId>
-      <artifactId>test-automation-object-mapper</artifactId>
-    </dependency>
-
-    <!-- Apache Commons Lang Dependency -->
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-    </dependency>
-  </dependencies>
+  <parent>
+    <groupId>org.dmukhin</groupId>
+    <artifactId>test-automation</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../../../pom.xml</relativePath> <!-- Relative path to the parent POM -->
+  </parent>
 </project>

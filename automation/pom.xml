@@ -3,42 +3,36 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.example</groupId>
-  <artifactId>test-automation</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>Test Automation</name>
-
   <dependencyManagement>
     <dependencies>
       <!-- General Custom Dependencies for Test Automation -->
       <dependency>
         <artifactId>test-automation-object-mapper</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>org.dmukhin</groupId>
         <version>${project.version}</version>
         <!-- Object mapping utility for test automation -->
       </dependency>
       <dependency>
         <artifactId>test-automation-config</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>org.dmukhin</groupId>
         <version>${project.version}</version>
         <!-- Configuration management for test automation -->
       </dependency>
       <dependency>
         <artifactId>test-automation-utils</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>org.dmukhin</groupId>
         <version>${project.version}</version>
         <!-- General utility functions for test automation -->
       </dependency>
       <dependency>
         <artifactId>test-automation-general-microservice</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>org.dmukhin</groupId>
         <version>${project.version}</version>
         <!-- Utilities specific to microservice testing -->
       </dependency>
       <dependency>
         <artifactId>test-automation-placeholder-microservice</artifactId>
-        <groupId>org.example</groupId>
+        <groupId>org.dmukhin</groupId>
         <version>${project.version}</version>
         <!-- Placeholder for future microservice-specific testing modules -->
       </dependency>
@@ -226,6 +220,12 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <artifactId>test-automation</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Test Automation</name>
+
+  <groupId>org.dmukhin</groupId>
 
 
   <!-- Sub-modules of the project -->

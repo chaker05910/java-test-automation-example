@@ -3,7 +3,7 @@
 <suite allow-return-values="true" name="Placeholder Suite" parallel="methods" thread-count="5">
     <test name="Service">
         <packages>
-            <package name="uitestingplayground.*"/>
+            <package name="org.dmukhin.webui.testng.uitestingplayground.*"/>
         </packages>
     </test>
     <!-- Add more <test> tags for different groups of test classes -->

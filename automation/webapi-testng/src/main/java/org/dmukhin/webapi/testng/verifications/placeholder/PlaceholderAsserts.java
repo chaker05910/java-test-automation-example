@@ -1,8 +1,8 @@
 package org.dmukhin.webapi.testng.verifications.placeholder;
 
 import java.util.List;
-import org.example.service.placeholder.models.comment.CommentDto;
-import org.example.service.placeholder.models.user.UserDto;
+import org.dmukhin.microservices.placeholder.models.comment.CommentDto;
+import org.dmukhin.microservices.placeholder.models.user.UserDto;
 
 /**
  * Factory class for creating instances of assertion classes related to placeholder entities.

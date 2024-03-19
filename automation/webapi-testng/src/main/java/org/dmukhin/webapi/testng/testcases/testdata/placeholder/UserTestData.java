@@ -1,8 +1,8 @@
 package org.dmukhin.webapi.testng.testcases.testdata.placeholder;
 
 import com.github.javafaker.Faker;
-import org.example.service.placeholder.models.user.AddressDto;
-import org.example.service.placeholder.models.user.UserDto;
+import org.dmukhin.microservices.placeholder.models.user.AddressDto;
+import org.dmukhin.microservices.placeholder.models.user.UserDto;
 
 /**
  * The {@code UserTestData} class is a utility class that provides methods for generating test data

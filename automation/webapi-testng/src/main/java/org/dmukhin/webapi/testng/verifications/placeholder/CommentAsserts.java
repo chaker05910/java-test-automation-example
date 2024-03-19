@@ -1,8 +1,8 @@
 package org.dmukhin.webapi.testng.verifications.placeholder;
 
 import io.qameta.allure.Step;
+import org.dmukhin.microservices.placeholder.models.comment.CommentDto;
 import org.dmukhin.webapi.testng.verifications.BaseAsserts;
-import org.example.service.placeholder.models.comment.CommentDto;
 
 /**
  * Contains assertion methods for verifying properties of CommentDto objects.

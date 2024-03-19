@@ -231,7 +231,7 @@
   <!-- Sub-modules of the project -->
   <modules>
     <module>modules/general/config</module>
-    <module>modules/general/object-mapper</module>
+    <module>modules/general/objectmapper</module>
     <module>modules/general/utils</module>
     <module>modules/microservices/general</module>
     <module>modules/microservices/placeholder</module>

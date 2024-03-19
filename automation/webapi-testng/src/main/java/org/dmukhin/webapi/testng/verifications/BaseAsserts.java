@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.recursive.comparison.RecursiveComparisonConfiguration;
 import org.assertj.core.data.TemporalUnitOffset;
-import org.example.service.general.models.BaseDto;
+import org.dmukhin.microservices.general.models.BaseDto;
 
 /**
  * Base class for implementing verification assertions in testing. Provides common assertion methods

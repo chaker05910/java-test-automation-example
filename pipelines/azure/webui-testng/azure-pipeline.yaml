@@ -1,0 +1,49 @@
+trigger:
+  - main
+
+parameters:
+  - name: microserviceName
+    displayName: 'Microservice Name'
+    type: string
+    default: 'uitestingplayground'
+
+  - name: suiteFileName
+    displayName: 'Suite XML File Name'
+    type: string
+    default: 'uitestingplayground.xml'
+
+  - name: browser
+    displayName: 'Browser'
+    type: string
+    default: 'edge'
+    values:
+      - edge
+      - chrome
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: '21'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
+
+  - task: Maven@3
+    continueOnError: true
+    inputs:
+      mavenPomFile: 'automation/pom.xml'
+      goals: 'clean test'
+      options: >
+        -Dselenide.browser=${{ parameters.browser}} 
+        -DsuiteXmlFile=testng/${{ parameters.microserviceName }}/${{ parameters.suiteFileName }}
+        -pl webui-testng 
+        -am
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.21' # Will be overridden in JavaToolInstaller
+      mavenVersionOption: 'Default'
+      mavenAuthenticateFeed: false
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      testRunTitle: 'Maven Tests'

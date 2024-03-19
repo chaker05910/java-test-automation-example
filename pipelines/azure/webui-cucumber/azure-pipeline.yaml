@@ -1,0 +1,59 @@
+trigger:
+  - main
+
+parameters:
+  - name: cucumberTags
+    displayName: 'Cucumber tags expression for test execution'
+    type: string
+    default: '@web'
+
+  - name: parallelThreads
+    displayName: 'How much parallel threads we can use for test execution'
+    type: number
+    default: '5'
+    values:
+      - 5
+      - 1
+
+  - name: browser
+    displayName: 'Browser'
+    type: string
+    default: 'edge'
+    values:
+      - edge
+      - chrome
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: '21'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
+
+  # Maven task to build and run tests
+  - task: Maven@3
+    continueOnError: true
+    inputs:
+      mavenPomFile: 'automation/pom.xml'
+      goals: >
+        clean 
+        compile 
+        test
+      options: >
+        -Dselenide.headless=true
+        -Dselenide.browser=${{ parameters.browser }}
+        -Dcucumber.execution.parallel.config.fixed.max-pool-size=${{ parameters.parallelThreads }}
+        -Dcucumber.filter.tags="${{ parameters.cucumberTags }}"
+        -pl webui-cucumber
+        -am
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.21'
+      mavenVersionOption: 'Default'
+      mavenAuthenticateFeed: false
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      testRunTitle: 'Maven Tests'
+

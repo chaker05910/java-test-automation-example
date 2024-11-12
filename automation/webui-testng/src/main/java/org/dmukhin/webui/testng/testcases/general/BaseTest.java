@@ -2,9 +2,8 @@ package org.dmukhin.webui.testng.testcases.general;
 
 import org.dmukhin.general.config.environment.EnvironmentProvider;
 import org.dmukhin.webui.testng.testcases.webdriver.WebDriverManager;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 /**
  * Abstract base test class providing setup and teardown methods for test cases.
@@ -18,24 +17,24 @@ public abstract class BaseTest {
      */
     @BeforeClass
     public void setupDriverConfigurations() {
-        WebDriverManager.setupAllureListener();
+        WebDriverManager.setupAllureSelenideListener();
         WebDriverManager.setupLog4JListener();
     }
 
     /**
      * Navigates to the homepage before each test method.
      */
-    @BeforeMethod
+    @BeforeClass
     public void goToHomepage() {
-        WebDriverManager.createWebdriverSession(getWebUrl(), true);
+        WebDriverManager.createWebDriverSession(getWebUrl(), true);
     }
 
     /**
      * Cleans up WebDriver session after each test method.
      */
-    @AfterMethod
+    @AfterClass
     public void cleanUp() {
-        WebDriverManager.resetWebdriverSession();
+        WebDriverManager.closeWebDriver();
     }
 
     /**

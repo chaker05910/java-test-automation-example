@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <!-- Basic project setup -->
+  <artifactId>test-automation-webui-testng-cucumber</artifactId>
+  <build>
+    <plugins>
+      <!-- Maven Surefire Plugin for test execution -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- Configuration for AspectJ Java agent -->
+          <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${org.aspectj.version}/aspectjweaver-${org.aspectj.version}.jar"
+          </argLine>
+          <properties>
+            <property>
+              <name>dataproviderthreadcount</name>
+              <value>5</value>
+            </property>
+          </properties>
+        </configuration>
+        <dependencies>
+          <!-- AspectJ Weaver dependency for AOP features -->
+          <dependency>
+            <artifactId>aspectjweaver</artifactId>
+            <groupId>org.aspectj</groupId>
+            <version>${org.aspectj.version}</version>
+          </dependency>
+        </dependencies>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven.surefire.plugin.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>allure-maven</artifactId>
+        <groupId>io.qameta.allure</groupId>
+        <version>${allure.maven.version}</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <!-- Allure JUnit and Selenide integration for reporting and browser automation -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-cucumber7-jvm</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-selenide</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+
+    <!-- Selenide for browser automation -->
+    <dependency>
+      <artifactId>selenide</artifactId>
+      <groupId>com.codeborne</groupId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+
+    <!-- AssertJ for fluent assertion library -->
+    <dependency>
+      <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+
+    <!-- Custom Configuration Dependency -->
+    <dependency>
+      <artifactId>test-automation-config</artifactId>
+      <groupId>org.dmukhin</groupId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+
+    <!-- Log4j for logging -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+
+    <!-- TestNG -->
+    <dependency>
+      <artifactId>testng</artifactId>
+      <groupId>org.testng</groupId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+
+    <!-- Cucumber -->
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-core</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-picocontainer</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <!-- Version is managed by the parent POM -->
+    </dependency>
+  </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Reference to parent POM for inheriting configurations -->
+  <name>webui-cucumber-automation-runner</name>
+
+  <!-- Module-specific properties -->
+  <packaging>jar</packaging>
+
+  <!-- Build plugins configuration -->
+  <parent>
+    <artifactId>test-automation</artifactId>
+    <groupId>org.dmukhin</groupId>
+    <relativePath>../pom.xml</relativePath>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <!-- Dependencies for this module -->
+  <properties>
+    <projectmodule.base.dir>${basedir}/../..</projectmodule.base.dir>
+  </properties>
+</project>

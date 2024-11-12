@@ -1,6 +1,6 @@
-package org.dmukhin.webui.testng.pageobjects.uitestingplayground;
+package org.dmukhin.webui.cucumber.stepdefinitions.pageobjects.uitestingplayground;
 
-import org.dmukhin.webui.testng.pageobjects.general.BasePage;
+import org.dmukhin.webui.cucumber.stepdefinitions.pageobjects.BasePage;
 
 /**
  * Base page class for UI Testing Playground pages. Provides common functionality and elements for

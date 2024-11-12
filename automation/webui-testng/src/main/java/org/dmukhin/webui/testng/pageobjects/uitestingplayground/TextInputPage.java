@@ -3,7 +3,7 @@ package org.dmukhin.webui.testng.pageobjects.uitestingplayground;
 import static com.codeborne.selenide.Selenide.$;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import org.dmukhin.webui.testng.pageobjects.IElements;
+import org.dmukhin.webui.testng.pageobjects.general.IElements;
 import org.openqa.selenium.By;
 
 /**

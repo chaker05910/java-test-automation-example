@@ -1,4 +1,4 @@
-package org.dmukhin.webui.testng.testcases.webdriver;
+package org.dmukhin.webui.cucumber.testcases.webdriver;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
@@ -12,7 +12,6 @@ import java.util.logging.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.dmukhin.general.config.maven.MavenProperties;
-import org.dmukhin.webui.testng.listeners.CustomLogEventListener;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v121.network.Network;
 import org.openqa.selenium.devtools.v121.network.model.Response;
@@ -39,14 +38,6 @@ public class WebDriverManager {
         .savePageSource(true)
         .includeSelenideSteps(true)
         .enableLogs(LogType.BROWSER, Level.ALL));
-  }
-
-  /**
-   * Sets up Log4J listener for logging browser events.
-   */
-  @Step("Setup Log4J Listener")
-  public static void setupLog4JListener() {
-    SelenideLogger.addListener("Log4J", new CustomLogEventListener());
   }
 
   /**

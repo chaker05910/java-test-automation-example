@@ -60,37 +60,6 @@
         <version>${allure.version}</version>
         <!-- Bill of materials for Allure, manages versions of Allure dependencies -->
       </dependency>
-      <dependency>
-        <artifactId>allure-testng</artifactId>
-        <groupId>io.qameta.allure</groupId>
-        <version>${allure.version}</version>
-        <!-- Allure integration with TestNG for generating test reports -->
-      </dependency>
-      <dependency>
-        <artifactId>allure-rest-assured</artifactId>
-        <groupId>io.qameta.allure</groupId>
-        <version>${allure.version}</version>
-        <!-- Allure integration with REST Assured for API testing reports -->
-      </dependency>
-      <dependency>
-        <artifactId>allure-cucumber7-jvm</artifactId>
-        <groupId>io.qameta.allure</groupId>
-        <version>${allure.version}</version>
-      </dependency>
-      <dependency>
-        <artifactId>allure-junit-platform</artifactId>
-        <groupId>io.qameta.allure</groupId>
-        <version>${allure.version}</version>
-      </dependency>
-
-      <!-- Google Guava Library -->
-      <dependency>
-        <artifactId>guava</artifactId>
-        <groupId>com.google.guava</groupId>
-        <version>${guava.version}</version>
-        <!-- Google Guava library, provides collection types, utilities, and more -->
-      </dependency>
-
       <!-- Selenide for Web Testing -->
       <dependency>
         <artifactId>selenide</artifactId>
@@ -176,46 +145,33 @@
         <version>${org.testng.version}</version>
         <!-- TestNG is used as the testing framework, providing annotations and running capabilities -->
       </dependency>
-      <!-- JUnit -->
-      <dependency>
-        <artifactId>junit-platform-suite</artifactId>
-        <groupId>org.junit.platform</groupId>
-        <version>${org.junit.platform.version}</version>
-        <!-- JUnit is used as the testing framework, providing annotations and running capabilities -->
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-      <dependency>
-        <artifactId>junit-jupiter-api</artifactId>
-        <groupId>org.junit.jupiter</groupId>
-        <version>${org.junit.jupiter.version}</version>
-      </dependency>
-      <dependency>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <groupId>org.junit.jupiter</groupId>
-        <version>${org.junit.jupiter.version}</version>
-      </dependency>
 
       <!-- JavaFaker for Generating Fake Test Data -->
       <dependency>
         <artifactId>javafaker</artifactId>
         <groupId>com.github.javafaker</groupId>
         <version>${com.github.javafaker.version}</version>
-        <!-- JavaFaker is used to generate fake data for tests -->
       </dependency>
+
       <!-- Cucumber -->
-      <dependency>
-        <artifactId>cucumber-java</artifactId>
-        <groupId>io.cucumber</groupId>
-        <version>${io.cucumber.version}</version>
-      </dependency>
       <dependency>
         <artifactId>cucumber-core</artifactId>
         <groupId>io.cucumber</groupId>
         <version>${io.cucumber.version}</version>
       </dependency>
       <dependency>
-        <artifactId>cucumber-junit-platform-engine</artifactId>
+        <artifactId>cucumber-java</artifactId>
         <groupId>io.cucumber</groupId>
+        <version>${io.cucumber.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-picocontainer</artifactId>
+        <version>${io.cucumber.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-testng</artifactId>
         <version>${io.cucumber.version}</version>
       </dependency>
     </dependencies>
@@ -237,7 +193,7 @@
     <module>modules/microservices/placeholder</module>
     <module>webapi-testng</module>
     <module>webui-testng</module>
-    <module>webui-cucumber</module>
+    <module>webui-testng-cucumber</module>
   </modules>
 
   <!-- Global properties used across the project -->
@@ -251,15 +207,12 @@
     <com.github.javafaker.version>1.0.2</com.github.javafaker.version>
     <commons-io.version>2.13.0</commons-io.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
-    <guava.version>32.1.3-jre</guava.version>
     <io.rest-assured.version>5.3.2</io.rest-assured.version>
     <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
     <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
     <org.apache.logging.log4j.version>2.20.0</org.apache.logging.log4j.version>
     <org.aspectj.version>1.9.21</org.aspectj.version>
     <io.cucumber.version>7.15.0</io.cucumber.version>
-    <org.junit.jupiter.version>5.8.2</org.junit.jupiter.version>
-    <org.junit.platform.version>1.9.3</org.junit.platform.version>
     <org.testng.version>7.8.0</org.testng.version>
     <org.testng.version>7.8.0</org.testng.version>
     <selenide.version>7.1.0</selenide.version>

@@ -201,21 +201,21 @@
     <projectmodule.base.dir>${basedir}</projectmodule.base.dir>
     <project.core.version>1.0.0</project.core.version>
     <allure.maven.version>2.12.0</allure.maven.version>
-    <allure.version>2.24.0</allure.version>
+    <allure.version>2.29.0</allure.version>
     <assertj-core.version>3.24.2</assertj-core.version>
     <com.fasterxml.jackson.core.version>2.15.2</com.fasterxml.jackson.core.version>
     <com.github.javafaker.version>1.0.2</com.github.javafaker.version>
     <commons-io.version>2.13.0</commons-io.version>
     <commons-lang3.version>3.12.0</commons-lang3.version>
-    <io.rest-assured.version>5.3.2</io.rest-assured.version>
+    <io.cucumber.version>7.19.0</io.cucumber.version>
     <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
     <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
     <org.apache.logging.log4j.version>2.20.0</org.apache.logging.log4j.version>
-    <org.aspectj.version>1.9.21</org.aspectj.version>
-    <io.cucumber.version>7.15.0</io.cucumber.version>
-    <org.testng.version>7.8.0</org.testng.version>
-    <org.testng.version>7.8.0</org.testng.version>
-    <selenide.version>7.1.0</selenide.version>
+    <io.rest-assured.version>5.4.0</io.rest-assured.version>
+    <org.aspectj.version>1.9.21.2</org.aspectj.version>
+    <org.testng.version>7.9.0</org.testng.version>
+    <org.testng.version>7.9.0</org.testng.version>
+    <selenide.version>7.5.1</selenide.version>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

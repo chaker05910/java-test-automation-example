@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <!-- Basic project setup -->
-  <artifactId>test-automation-webui-testng-cucumber</artifactId>
+  <artifactId>test-automation-webui-playwright-testng-cucumber</artifactId>
   <build>
     <plugins>
       <!-- Maven Surefire Plugin for test execution -->
@@ -41,28 +41,10 @@
     </plugins>
   </build>
   <dependencies>
-    <!-- Allure JUnit and Selenide integration for reporting and browser automation -->
+    <!-- Playwright for Web Testing -->
     <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-cucumber7-jvm</artifactId>
-      <!-- Version is managed by the parent POM -->
-    </dependency>
-    <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-testng</artifactId>
-      <!-- Version is managed by the parent POM -->
-    </dependency>
-    <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-selenide</artifactId>
-      <!-- Version is managed by the parent POM -->
-    </dependency>
-
-    <!-- Selenide for browser automation -->
-    <dependency>
-      <artifactId>selenide</artifactId>
-      <groupId>com.codeborne</groupId>
-      <!-- Version is managed by the parent POM -->
+      <artifactId>playwright</artifactId>
+      <groupId>com.microsoft.playwright</groupId>
     </dependency>
 
     <!-- AssertJ for fluent assertion library -->
@@ -81,13 +63,13 @@
 
     <!-- Log4j for logging -->
     <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
+      <groupId>org.apache.logging.log4j</groupId>
       <!-- Version is managed by the parent POM -->
     </dependency>
     <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-core</artifactId>
+      <groupId>org.apache.logging.log4j</groupId>
       <!-- Version is managed by the parent POM -->
     </dependency>
 
@@ -100,30 +82,30 @@
 
     <!-- Cucumber -->
     <dependency>
-      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-core</artifactId>
+      <groupId>io.cucumber</groupId>
       <!-- Version is managed by the parent POM -->
     </dependency>
     <dependency>
-      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
+      <groupId>io.cucumber</groupId>
       <!-- Version is managed by the parent POM -->
     </dependency>
     <dependency>
-      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-picocontainer</artifactId>
+      <groupId>io.cucumber</groupId>
       <!-- Version is managed by the parent POM -->
     </dependency>
     <dependency>
-      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-testng</artifactId>
+      <groupId>io.cucumber</groupId>
       <!-- Version is managed by the parent POM -->
     </dependency>
   </dependencies>
   <modelVersion>4.0.0</modelVersion>
 
   <!-- Reference to parent POM for inheriting configurations -->
-  <name>webui-testng-cucumber-automation-runner</name>
+  <name>webui-playwright-testng-cucumber-automation-runner</name>
 
   <!-- Module-specific properties -->
   <packaging>jar</packaging>

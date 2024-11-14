@@ -153,6 +153,13 @@
         <version>${com.github.javafaker.version}</version>
       </dependency>
 
+      <!-- Playwright for Web Testing -->
+      <dependency>
+        <artifactId>playwright</artifactId>
+        <groupId>com.microsoft.playwright</groupId>
+        <version>${com.microsoft.playwright.version}</version>
+      </dependency>
+
       <!-- Cucumber -->
       <dependency>
         <artifactId>cucumber-core</artifactId>
@@ -192,8 +199,9 @@
     <module>modules/microservices/general</module>
     <module>modules/microservices/placeholder</module>
     <module>webapi-testng</module>
-    <module>webui-testng</module>
-    <module>webui-testng-cucumber</module>
+    <module>webui-selenide-testng</module>
+    <module>webui-selenide-testng-cucumber</module>
+    <module>webui-playwright-testng-cucumber</module>
   </modules>
 
   <!-- Global properties used across the project -->
@@ -216,6 +224,7 @@
     <org.testng.version>7.9.0</org.testng.version>
     <org.testng.version>7.9.0</org.testng.version>
     <selenide.version>7.5.1</selenide.version>
+    <com.microsoft.playwright.version>1.48.0</com.microsoft.playwright.version>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

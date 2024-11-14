@@ -5,9 +5,9 @@
 
   <!-- Basic project setup -->
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>test-automation-webui-testng</artifactId>
+  <artifactId>test-automation-webui-selenide-testng</artifactId>
   <packaging>jar</packaging>
-  <name>webui-testng-automation-runner</name>
+  <name>webui-selenide-testng-automation-runner</name>
 
   <!-- Reference to parent POM for inheriting configurations -->
   <dependencies>

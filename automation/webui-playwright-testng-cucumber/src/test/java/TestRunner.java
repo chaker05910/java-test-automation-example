@@ -6,11 +6,10 @@ import org.testng.annotations.DataProvider;
     plugin = {
         "pretty",
         "rerun:target/failed_scenarios.txt",
-        "json:target/cucumber-report/cucumber.json"  // Add JSON report for better reporting
+        "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
     },
     monochrome = true,
-    tags = "${cucumber.filter.tags}",  // Filter tags passed as parameters
-    glue = "steps"  // Path to your step definitions
+    tags = "${cucumber.filter.tags}"  // Filter tags passed as parameters
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 

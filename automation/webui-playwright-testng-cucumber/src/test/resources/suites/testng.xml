@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallel Cucumber Tests by Tags">
+  <!-- First test suite: Main tests -->
+  <test name="Cucumber Test Suite" parallel="methods" thread-count="5">
+    <classes>
+      <class name="TestRunner"/>
+    </classes>
+  </test>
+
+  <!-- Second test suite: Failed scenarios -->
+  <test name="Failed Scenarios Suite" parallel="methods" thread-count="5">
+    <classes>
+      <class name="TestReRunner"/>
+    </classes>
+  </test>
+</suite>

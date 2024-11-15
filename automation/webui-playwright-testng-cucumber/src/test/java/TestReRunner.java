@@ -6,8 +6,7 @@ import org.testng.SkipException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 
-@CucumberOptions(plugin = {"io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-    "pretty"},
+@CucumberOptions(plugin = {"pretty"},
     monochrome = true,
     features = "@target/failed_scenarios.txt"
 )

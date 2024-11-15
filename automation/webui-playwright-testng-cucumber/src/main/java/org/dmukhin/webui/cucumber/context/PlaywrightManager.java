@@ -7,38 +7,41 @@ import com.microsoft.playwright.Playwright;
 
 public class PlaywrightManager {
 
-  private static Playwright playwright;
-  private static Browser browser;
-  private static Page page;
+  private static final ThreadLocal<Playwright> playwrightThreadLocal = ThreadLocal.withInitial(
+      Playwright::create);
+  private static final ThreadLocal<Browser> browserThreadLocal = ThreadLocal.withInitial(() ->
+      playwrightThreadLocal.get().chromium()
+          .launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false))
+  );
+  private static final ThreadLocal<Page> pageThreadLocal = ThreadLocal.withInitial(
+      () -> browserThreadLocal.get().newPage());
 
   // Private constructor to prevent instantiation
   private PlaywrightManager() {
   }
 
-  // Method to initialize Playwright, Browser, and Page as Singleton
+  // Method to get the Page object for the current thread
   public static Page getPage() {
-    if (page == null) {
-      playwright = Playwright.create();
-      browser = playwright.chromium()
-          .launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false));
-      page = browser.newPage();
-    }
-    return page;
+    return pageThreadLocal.get();
   }
 
-  // Method to close resources
+  // Method to close resources for the current thread
   public static void close() {
+    Page page = pageThreadLocal.get();
     if (page != null) {
       page.close();
-      page = null;
+      pageThreadLocal.remove();
     }
+    Browser browser = browserThreadLocal.get();
     if (browser != null) {
       browser.close();
-      browser = null;
+      browserThreadLocal.remove();
     }
+    Playwright playwright = playwrightThreadLocal.get();
     if (playwright != null) {
       playwright.close();
-      playwright = null;
+      playwrightThreadLocal.remove();
     }
   }
 }
+
